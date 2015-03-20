@@ -1,4 +1,5 @@
-[logo]: https://github.com/jacobmitchinson/mesheeChat/blob/master/logo.png
+![alt text][logo]
+[logo]: public/Images/logo.png
 
 ### Introduction
 
