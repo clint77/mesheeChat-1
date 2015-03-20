@@ -37,6 +37,3 @@ git clone https://github.com/jacobmitchinson/mesheeChat
 npm install 
 nodemon
 ```
-
-
-
