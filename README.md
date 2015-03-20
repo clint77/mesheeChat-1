@@ -1,75 +1,42 @@
-# mesheeChat
+### Introduction
 
-## Cryptography
+All around the world internet freedoms are being eroded by governments, restricting communications. For example, [in Venezuala in 2014 the internet was turned off and modes of communcation were blocked](http://www.huffingtonpost.com/2014/02/21/venezuela-internet-_n_4832505.html). We wanted to create a secure, decentralised communications network that would enable secure conversations to take place without the internet. 
 
-### Motivation
+mesheeChat is a 2 week project which uses the mesh networking tool CJDNS in combination with Node.js to provide secure chat over a mesh network. We prototyped the network using Raspberry Pis and tested using Mocha and Webdriver.io.
 
-"What if you could communicate with anyone, anywhere, without going over an inch of corporate or government cable?"
+### Process
 
-Meshed network vs Internet Service Provider (ISP)
+Firstly, since we only had two weeks to build the project, we had to narrow down how we were going to provide communications without the internet. We settled on mesh networking to provide this functionaltiy. Mesh networking enables data trasfer throughout a network whereby each device in the network is connected to all others. We decided to use CJDNS to provide this functionality becaise a) it is decentralised, b) it provides secure data transfer and c) it is the most widely adopted secure mesh tool. 
 
-1. Centralised authority control-freed
-2. Robustness in natural disaster
-3. Political free
-4. No more spying
+Secondly, we wanted to be able to prototype how the network would work and we wanted a network which we could control in a test environment. We used Raspberry Pis to emulate the network. Each Pi was running CJDNS which enabled each Pi to connect to the other via WIFI.
 
-### Security
+Then we wanted users on the network to communicate. We selected Node.js as its async nature means that a lot of requests are able to be handled by a single node in the mesh network. We then used websockets to push the messages to devices connected to the network. 
 
-*Resources*
-* [ChatSafe]
-* [FireChat]
-* [Encrypted Chat]
-* [Cryptocat]
+We tested using Mocha, Chai, Webdriver.io and Should using TDD and BDD throughout the process.
 
-[ChatSafe]: https://github.com/DavidTimms/ChatSafe
-[FireChat]: https://firechat.firebaseapp.com
-[Encrypted Chat]: http://www.pubnub.com/blog/sending-encrypted-chat-messages-tutorial/
-[Cryptocat]: https://github.com/cryptocat/cryptocat/
+### What We Learnt
 
-Maybe a chat room structure is better than a p2p encryption?
-Chat room only allow people with the key to access.
-Other people cannot access the chat room unless they have got the key.
+- 2 weeks is a tough challenge to make a polished application
+- Networking is HARD and working with all new technologies has its pitfalls documentation wise. But also there are parts of the tools we were using where the documentation is incorrect or certain things don't work. For example, with CJDNS there were multiple errors in the setup process that we came across that required clarification. We spoke to the developers over IRC to work this out. 
+- Unit testing Socket.io also has its difficulties. In hindsight, feature tests provided the coverage that we needed. 
+- Working with hardware provides difficulties with new software and it is problematic when it comes to debugging 
+- Teamwork is necessary! We had a software team and hardware team in the first week. SCRUMs were necessary to keep on us on track. We also organised the project using Trello. 
+- BE AGILE! We had repeated brickwalls that couldn't be knocked down in 2 weeks. We wanted to get mesheeChat working on mobile but CJDNS is not yet ready for mobile and the alternative options such as the OpenGarden sdk aren't yet available. We would have had to build our own mesh tool to use mobile which wasn't feasible in 2 weeks.
 
-### Two types of security
+### TODO 
 
-1. A communication channel that the server don't allow outsider to see.
-2. A communication channel that the server itself cannot see.
+- Setup guide for CJDNS with mesheeChat
+- We have started work on a rooms feature to provide rooms for people to have conversations. 
+- AutoConnect - find when users are running the app and decide who hosts
+- P2P would be fantastic 
 
-*Resources*
-* [Private Socket room]
-* [Candy]
+### TO RUN THE APP
 
-[Private Socket room]: https://www.npmjs.com/package/innkeeper-socket.io
-[Candy]: https://candy-chat.github.io/candy/
+```sh 
+git clone https://github.com/jacobmitchinson/mesheeChat
+npm install 
+nodemon
+```
 
-### Settlement
 
-Since we would like the government to have no way to decipher the message, we want that even the server cannot see the content. HTTPS may do the trick, but it is too complex to start working on that. A simpler approach is to find a Node way of encrypting chat messages. And this, has lead us to [Cryptalk]. This is a npm that only allow messaging when all party in the chatroom have the key.
 
-[Cryptalk]: https://www.npmjs.com/package/cryptalk
-
-At one stage, we almost used [FreeStep], but then we realised that the code is maintained by only one single developer, and there are parts missing in the documentation (gitignored ssl folder), which forced us to look into other modules and eventually selected Cryptalk as our settlement.
-
-[FreeStep]: https://freestep.net
-
-### Cryptalk Reverse Engineering
-
-The core module in the Cryptalk is [cryptojs]
-
-[cryptojs]: http://cryptojs.altervista.org/api/#.VO4Oy8bHJRE
-
-A glimpse of what this module does can be seen from my [Cryptography] repository.
-This uses Advanced Encryption Standard (AES) for encryption, and can be how we implement the security layer of Meshee.
-
-[Cryptography]: https://github.com/jindai1783/Cryptography
-
-### Secure Chat
-
-A simple integration of Socket.io chat with client-side encryption can be find at the repository [Secure Chat]. It uses AES encrytion, and only when the cipher key and decipher key matches you can see the message, otherwise you will only see 'null'.
-
-[Secure Chat]: https://github.com/jindai1783/Secure_Chat
-
-### Glossary
-
-* Ad hoc networking: a system of network elements that combine to form a network requiring little or no planning.
-* NSA: National Security Agent
