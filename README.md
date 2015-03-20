@@ -1,3 +1,5 @@
+[logo]: https://github.com/jacobmitchinson/mesheeChat/blob/master/logo.png
+
 ### Introduction
 
 All around the world internet freedoms are being eroded by governments, restricting communications. For example, [in Venezuala in 2014 the internet was turned off and modes of communcation were blocked](http://www.huffingtonpost.com/2014/02/21/venezuela-internet-_n_4832505.html). We wanted to create a secure, decentralised communications network that would enable secure conversations to take place without the internet. 
