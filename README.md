@@ -1,5 +1,8 @@
 # mesheeChat
 
+mesheeChat uses the mesh networking tool CJDNS in combination with Node.js to provide secure chat over a mesh network. We prototyped the network using Raspberry Pis and tested using Mocha and Webdriver.io.
+
+
 ## Cryptography
 
 ### Motivation
