@@ -35,7 +35,7 @@ We tested using Mocha, Chai, Webdriver.io and Should using TDD and BDD throughou
 ### TO RUN THE APP
 
 ```sh 
-git clone https://github.com/jacobmitchinson/mesheeChat
+git clone https://github.com/clint77/mesheeChat-1
 npm install 
 nodemon
 ```
