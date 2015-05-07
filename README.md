@@ -31,6 +31,7 @@ We tested using Mocha, Chai, Webdriver.io and Should using TDD and BDD throughou
 - We have started work on a rooms feature to provide rooms for people to have conversations. 
 - AutoConnect - find when users are running the app and decide who hosts
 - P2P would be fantastic 
+- Create an Android mobile app using Meshnet. Meshnet is an Android app that lets you connect to cjdns networks.
 
 ### TO RUN THE APP
 
