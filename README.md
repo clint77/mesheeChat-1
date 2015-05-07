@@ -19,7 +19,7 @@ We tested using Mocha, Chai, Webdriver.io and Should using TDD and BDD throughou
 ### What We Learnt
 
 - 2 weeks is a tough challenge to make a polished application
-- Networking is HARD and working with all new technologies has its pitfalls documentation wise. But also there are parts of the tools we were using where the documentation is incorrect or certain things don't work. For example, with CJDNS there were multiple errors in the setup process that we came across that required clarification. We spoke to the developers over IRC to work this out. 
+- Networking is HARD and working with all new technologies has its pitfalls documentation wise. But also there are parts of the tools we were using where the documentation is incorrect or certain things don't work. For example, with CJDNS there were multiple errors in the setup process that we came across that required clarification. We spoke to the developers in Berlin and Seattle over IRC to work this out. 
 - Unit testing Socket.io also has its difficulties. In hindsight, feature tests provided the coverage that we needed. 
 - Working with hardware provides difficulties with new software and it is problematic when it comes to debugging 
 - Teamwork is necessary! We had a software team and hardware team in the first week. SCRUMs were necessary to keep on us on track. We also organised the project using Trello. 
