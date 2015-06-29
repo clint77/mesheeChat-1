@@ -27,7 +27,7 @@ We tested using Mocha, Chai, Webdriver.io and Should using TDD and BDD throughou
 
 ### TODO 
 
-- Setup guide for CJDNS with mesheeChat
+- Setup guide for CJDNS with mesheeChat.
 - We have started work on a rooms feature to provide rooms for people to have conversations. 
 - AutoConnect - find when users are running the app and decide who hosts
 - P2P would be fantastic 
